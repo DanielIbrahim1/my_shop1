@@ -50,6 +50,7 @@ class Order(models.Model):
     prod=models.ForeignKey(Product,on_delete=models.SET_NULL,null=True)
     amount=models.ForeignKey(Cart,on_delete=models.SET_NULL,null=True, related_name='order_amount', db_column='amount')
     total_price= models.ForeignKey(Cart,on_delete=models.SET_NULL,null=True,related_name='order_total_price',db_column='total_price')
+    createdTime=models.DateTimeField(auto_now_add=True)
     def __str__(self) :
         return self.cat
     
